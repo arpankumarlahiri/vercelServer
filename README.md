@@ -57,13 +57,20 @@ A comprehensive Node.js-based platform to explore, bookmark, and review Japanese
 This project uses a `.env` file to configure essential environment variables. Ensure the following values are set:
 
 ```plaintext
-PORT=3000
-MYSQL_DB=japanese_culture
-MYSQL_USER=root
-MYSQL_PASSWORD=your_password
+# Database Configuration
+DB_HOST=sql12.freemysqlhosting.net
+DB_NAME=sql12742813
+DB_USERNAME=sql12742813
+DB_PASSWORD=checkEmailOnDate5thNov
+DB_PORT=3306
+DB_DIALECT=mysql
+
 MONGO_URI=mongodb://localhost:27017/japanese_culture
 JWT_SECRET=your_jwt_secret
 REDIS_URL=redis://localhost:6379
+
+# Node Environment
+NODE_ENV=development 
 ```
 
 ### Installation

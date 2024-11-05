@@ -15,5 +15,7 @@
     "./*.js",
     "src/**/*.ts",
     "test/**/*.ts",
+    "config/**/*",
+    "models/**/*.ts"
   ],
 }
