@@ -31,7 +31,7 @@ A comprehensive Node.js-based platform to explore, bookmark, and review Japanese
 - **Authentication**: JSON Web Tokens (JWT) via Passport.js
 - **Caching**: Redis for caching frequently accessed content
 - **ORM/ODM**: Sequelize (MySQL), Mongoose (MongoDB)
-- **Deployment**: PM2 for process management, Nginx as a reverse proxy
+- **Deployment**: Handled by Vercel
 - **Environment Management**: Dotenv
 - **Logging**: Winston for structured logging
 - **Testing**: Jest, Supertest
@@ -90,11 +90,6 @@ REDIS_URL=redis://localhost:6379
 Start the app in development mode:
 ```bash
 npm run dev
-```
-
-For production mode, use PM2:
-```bash
-pm2 start ecosystem.config.js
 ```
 
 ---
@@ -157,18 +152,13 @@ pm2 start ecosystem.config.js
    - Rate limiting on sensitive routes prevents abuse.
    - Environment variables are securely managed with dotenv.
 
-### 5. **Deployment with PM2 and Nginx**
-
-   PM2 is used for process management, ensuring the app auto-restarts on crashes. Nginx serves as a reverse proxy to manage traffic and handle SSL termination for production readiness.
-
----
 
 ## Advanced Features
 
 1. **Rate Limiting**: Configured with `express-rate-limit` to handle potential abuse of login and registration routes.
 2. **WebSockets**: Real-time notifications for newly added events or media. Clients are notified when new events or media are published.
 3. **Database Indexing**: Indexes set in MySQL for frequently queried columns and in MongoDB for fields like `type` and `genre` to optimize query performance.
-4. **Scalability**: Clustered instances are managed via PM2, and reverse-proxying with Nginx enables load balancing.
+4. **Scalability**: Check this
 5. **Automated Testing**: CI/CD pipeline with GitHub Actions runs Jest and Supertest for automated testing on all pull requests.
 
 ---
