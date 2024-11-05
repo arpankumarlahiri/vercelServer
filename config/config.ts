@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import mysql2 from 'mysql2';
+
 export default {
   username: process.env.DB_USERNAME || 'root',
   password: process.env.DB_PASSWORD || '',
