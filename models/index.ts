@@ -11,7 +11,7 @@ let sequelize: Sequelize;
 sequelize = new Sequelize(config.database, config.username, config.password, {
   host: config.host,
   dialect: config.dialect as Dialect,
-  // dialectModule: require('mysql2'),
+  dialectModule: require('mysql2'),
   // dialectOptions: {
   //   ssl: {
   //     require: true,
