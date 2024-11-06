@@ -27,7 +27,7 @@ userRouter.post('/login', async (req, res) => {
   res.json({
     message: 'User logged in successfully',
     user: userWithoutPassword,
-    token,
+    token: `Bearer ${token}`,
   });
 });
 
