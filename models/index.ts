@@ -12,12 +12,6 @@ sequelize = new Sequelize(config.database, config.username, config.password, {
   host: config.host,
   dialect: config.dialect as Dialect,
   dialectModule: require('mysql2'),
-  // dialectOptions: {
-  //   ssl: {
-  //     require: true,
-  //     rejectUnauthorized: false,
-  //   },
-  // },
   port: parseInt(config.port as string, 10),
 });
 
