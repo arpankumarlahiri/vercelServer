@@ -1,9 +1,7 @@
 import express from 'express';
 
 import MessageResponse from '../interfaces/MessageResponse';
-import emojis from './emojis';
-
-import db from '../../models';
+import userRouter from './users';
 
 const router = express.Router();
 
@@ -13,11 +11,6 @@ router.get<{}, MessageResponse>('/', (req, res) => {
   });
 });
 
-router.post('/users', async (req, res) => {
-  const user = await db.User.create(req.body);
-  res.json({ message: 'User created successfully', user });
-});
-
-router.use('/emojis', emojis);
+router.use('/users', userRouter);
 
 export default router;

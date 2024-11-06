@@ -71,6 +71,8 @@ REDIS_URL=redis://localhost:6379
 
 # Node Environment
 NODE_ENV=development 
+PORT=5001
+JWT_SECRET=A_SECRET_KEY_FOR_JWT
 ```
 
 ### Installation
