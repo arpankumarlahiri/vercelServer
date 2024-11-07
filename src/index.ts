@@ -7,7 +7,7 @@ import app from './app';
 const port = process.env.PORT || 5001;
 
 db.sequelize
-  .sync()
+  .sync({ alter: true })
   .then(() => {
     app.listen(port, () => {
       /* eslint-disable no-console */
