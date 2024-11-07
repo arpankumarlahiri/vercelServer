@@ -13,9 +13,6 @@ require('dotenv').config();
 
 const app = express();
 
-app.use(middlewares.notFound);
-app.use(middlewares.errorHandler);
-
 app.use(morgan('dev'));
 app.use(helmet());
 app.use(cors());
@@ -29,5 +26,8 @@ app.get<{}, MessageResponse>('/', (req, res) => {
 });
 
 app.use('/api/', api);
+
+app.use(middlewares.notFound);
+app.use(middlewares.errorHandler);
 
 export default app;
