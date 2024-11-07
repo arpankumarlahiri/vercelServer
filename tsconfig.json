@@ -4,16 +4,18 @@
     "sourceMap": true,
     "target": "esnext",
     "module": "commonjs",
-    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "esModuleInterop": true,
   },
   "include": [
     "./api/",
     "./*.js",
     "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/index.d.ts",
     "test/**/*.ts",
     "config/**/*",
     "models/**/*.ts"

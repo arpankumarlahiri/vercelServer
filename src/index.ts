@@ -3,21 +3,26 @@ dotenv.config();
 
 import db from '../models';
 import app from './app';
+import './types';
+import mongoConnect from './Mongoose/Init';
 
 const port = process.env.PORT || 5001;
 
-db.sequelize
-  .sync({ alter: true })
+mongoConnect()
   .then(() => {
-    app.listen(port, () => {
-      /* eslint-disable no-console */
-      console.log(`Listening: http://localhost:${port}`);
-      /* eslint-enable no-console */
-    });
+    db.sequelize
+      // .sync({ alter: true })
+      .sync()
+      .then(() => {
+        app.listen(port, () => {
+          console.log(`Listening: http://localhost:${port}`);
+        });
+      })
+      .catch((error) => {
+        /* eslint-disable no-console */
+        console.error('Unable to connect to the database:', error);
+        /* eslint-enable no-console */
+        process.exit(1);
+      });
   })
-  .catch((error) => {
-    /* eslint-disable no-console */
-    console.error('Unable to connect to the database:', error);
-    /* eslint-enable no-console */
-    process.exit(1);
-  });
+  .catch(console.log);
